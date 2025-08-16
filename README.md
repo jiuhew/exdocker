@@ -7,16 +7,19 @@
 ## 🚀 技术栈
 
 ### 前端
+
 - **React 18** + **TypeScript** + **Vite 5**
 - 现代化构建工具链，支持热更新和快速开发
 
 ### 后端
+
 - **Django 5.x** + **Django REST Framework**
 - **Python 3.12** 最新特性支持
 - **Celery 5.x** 异步任务队列
 - **Redis 7.4** 作为消息代理和结果存储
 
 ### 基础设施
+
 - **MySQL 8.4** 关系型数据库
 - **Nginx 1.27** 反向代理和静态文件服务
 - **Docker Compose v2** 容器编排
@@ -24,6 +27,7 @@
 ## 🐳 Docker 学习要点
 
 ### 核心概念
+
 - **容器化**：将应用及其依赖打包到独立环境中
 - **镜像管理**：理解镜像构建、标签、推送等操作
 - **服务编排**：通过Compose管理多容器应用
@@ -31,17 +35,20 @@
 - **数据持久化**：卷挂载和数据管理
 
 ### 开发 vs 生产
+
 - **开发环境**：代码挂载、热更新、调试友好
 - **生产环境**：镜像部署、健康检查、监控告警
 
 ## 🏗️ 快速开始
 
 ### 环境要求
+
 - **Windows 11**: Docker Desktop + WSL2
 - **Linux**: Docker Engine + Compose v2
 - **macOS**: Docker Desktop
 
 ### 一键启动
+
 ```bash
 # 1. 复制环境配置
 cp .env.example .env
@@ -54,6 +61,7 @@ docker compose ps
 ```
 
 ### 服务访问
+
 - **前端应用**: http://localhost:3000
 - **后端API**: http://localhost:8000
 - **Nginx代理**: http://localhost/
@@ -62,6 +70,7 @@ docker compose ps
 ## 🔧 开发工作流
 
 ### 代码修改
+
 ```bash
 # 代码通过卷挂载，修改后容器自动重载
 # 查看实时日志
@@ -70,6 +79,7 @@ docker compose logs -f frontend
 ```
 
 ### 数据库操作
+
 ```bash
 # 进入后端容器
 docker compose exec backend sh
@@ -82,6 +92,7 @@ python manage.py createsuperuser
 ```
 
 ### 任务队列
+
 ```bash
 # 查看Celery状态
 docker compose logs -f celery
@@ -93,21 +104,25 @@ curl "http://localhost:8000/api/common/add/?x=1&y=2"
 ## 📚 学习路径
 
 ### 第一阶段：基础概念
+
 1. 理解Docker镜像、容器、卷的概念
 2. 掌握docker-compose.yml的配置语法
 3. 学会基本的容器管理命令
 
 ### 第二阶段：服务编排
+
 1. 理解服务间的依赖关系
 2. 掌握网络配置和端口映射
 3. 学会数据持久化配置
 
 ### 第三阶段：生产部署
+
 1. 学习镜像构建和优化
 2. 掌握环境变量和配置管理
 3. 理解健康检查和监控
 
 ### 第四阶段：高级特性
+
 1. 学习多环境部署策略
 2. 掌握CI/CD集成
 3. 理解容器安全和最佳实践
@@ -132,6 +147,7 @@ react_explore/
 ## 🔍 常见问题
 
 ### 构建问题
+
 ```bash
 # 如果遇到BuildKit问题，关闭BuildKit
 set DOCKER_BUILDKIT=0
@@ -139,6 +155,7 @@ docker compose build
 ```
 
 ### 端口占用
+
 ```bash
 # 检查端口占用
 netstat -ano | findstr :8000
@@ -146,6 +163,7 @@ netstat -ano | findstr :3000
 ```
 
 ### 数据重置
+
 ```bash
 # 完全重置（删除所有容器和数据）
 docker compose down -v
@@ -155,12 +173,14 @@ docker compose up -d --build
 ## 📖 深入学习
 
 ### 推荐资源
+
 - [Docker官方文档](https://docs.docker.com/)
 - [Docker Compose文档](https://docs.docker.com/compose/)
 - [Django官方文档](https://docs.djangoproject.com/)
 - [React官方文档](https://react.dev/)
 
 ### 进阶主题
+
 - 容器镜像优化和分层
 - 多阶段构建
 - 容器安全扫描
